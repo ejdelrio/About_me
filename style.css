@@ -1,0 +1,39 @@
+body {
+  color: red;
+  background-color: black;
+}
+
+header {
+  background-color: #444444;
+  font-family: fantasy;
+}
+
+button {
+  font-size: 15px;
+}
+
+header > p {
+  font-size: 20px;
+  font-style: oblique;
+}
+
+main {
+  background-color: #333333;
+  color: white;
+}
+
+main > ul > li {
+  font-family: monospace;
+  font-size: 20px;
+}
+
+main > ol > li {
+  font-family: fantasy;
+}
+
+
+img {
+  max-width: 25%;
+  max-height: 25%;
+  display: inline;
+}
