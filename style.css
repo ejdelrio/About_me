@@ -1,23 +1,38 @@
 body {
-  color: red;
   background-image: url("http://www.planwallpaper.com/static/images/colorful-triangles-background_yB0qTG6.jpg");
 }
 
-header {
-  background-color: #444444;
+#bar {
+  height: 150px;
+  width: 100%;
+  background: black;
+  position: fixed;
+  top: 0
+}
+
+h1 {
+  color: white;
+  text-align: center;
   font-family: fantasy;
 }
 
-button {
-  font-size: 15px;
+.button {
+  color: white;
+  border: 2px solid white;
+  height: 30px;
+  width: 24%;
+  display: inline-block;
+  text-align: center;
+  vertical-align: bottom;
 }
 
-header > p {
+.button > p {
   font-size: 20px;
-  font-style: oblique;
+  font-family: fantasy;
 }
 
 main {
+  margin-top: 150px;
   background-image: url("http://www.planwallpaper.com/static/images/elegant-grey-illumination-background-presentations-powerpoint-backgrounds.jpg");
   color: white;
 }
@@ -34,6 +49,7 @@ main > ol > li {
 
 img {
   max-width: 25%;
-  max-height: 25%;
+  max-height: 12%;
   display: inline;
+  border-radius: 200px;
 }
