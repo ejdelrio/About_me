@@ -1,6 +1,6 @@
 body {
   color: red;
-  background-color: black;
+  background-image: url("http://www.planwallpaper.com/static/images/colorful-triangles-background_yB0qTG6.jpg");
 }
 
 header {
@@ -18,7 +18,7 @@ header > p {
 }
 
 main {
-  background-color: #333333;
+  background-image: url("http://www.planwallpaper.com/static/images/elegant-grey-illumination-background-presentations-powerpoint-backgrounds.jpg");
   color: white;
 }
 
