@@ -31,45 +31,33 @@ var questions = [
   'And can you teach me how to dance real slow?'
 ];
 
-function quiz(genOutput, turns, quest, sol) {
+function quiz(genOutput, turns, quest, sol, right) {
   for (var i = 0, l = turns; i < l; i++) {
     while (true) {
-      var userInput = prompt(quest).tolowerCase());
-      console.log ('user reponse: ', userInput;)
+      var userInput = prompt(quest).toLowerCase();
+      console.log ('user reponse: ', userInput);
       if (sol.includes(userInput)) {
         output.push(userInput);
-        alert('you got it right.');
-        break;
+        alert(right);
+        return null
       } else {
         alert(genOutput);
+        break;
       }
     }
   }
 }
 
 for (var i = 0; i < 5; i++) {
-  quiz('That is not a valid reponse.', 1, questions[i], answers);
+  quiz('That is not a valid reponse.', 1, questions[i], answers, 'Thank you.');
+}
 
-quiz('Nope.', 6, 'What languages do I speak?', languages)
+quiz('Nope.', 6, 'What languages do I speak?', languages, 'You got it right.')
 alert('the correct answers were: ' + languages.join(", "))
 
 var randNum = Math.floor(Math.random() * 20 + 1);
 var count = 0
- do {
-  var numGuess = parseInt(prompt("Guess a number between 1 and 20!!!"));
-  console.log('users guess: ', numGuess)
-    if (numGuess === randNum) {
-      alert('Congratulations!!! You guessed correctly');
-      output.push('y')
-      break;
-    } else {
-      alert('Nope. You have ' + (4 - (count + 1)) + ' tries left');
-    }
-    if (count === 3) {
-      alert('You\'re all out of turns. You lose!! :D')
-    }
-    count ++
-} while (count != 4);
+ quiz('You got it wrong.', 4, 'Guess a number between 1 and 20', [randNum], 'Good job, you got it right. ')
 
 var correct = 0;
 for (var i =0, l = output.length; i < l; i++) {
@@ -79,9 +67,3 @@ for (var i =0, l = output.length; i < l; i++) {
 }
 
 alert('Congratulations ' + userName + '!!! You got ' + correct + ' question correct');
-
-
-alert('last questions. I promise!!')
-for (var i = 5, l = questions.length; i < l; i++){
-  prompt(questions[i] + '?');
-}
