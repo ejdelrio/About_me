@@ -21,40 +21,36 @@ var languages = ['english', 'spanish', 'thai'];
 var answers = ['y','yes','n', 'no' ];
 var output = [];
 var questions = [
-  'play an instrument',
-  'speak a foreign language',
-  'like to gorge',
-  'drive a rust bucket',
-  'like scandanavian death metel',
+  'Do I play an instrument?',
+  'Do I speak a foreign language?',
+  'Do I like to gorge?',
+  'Do I drive a rust bucket?',
+  'Do I like scandanavian death metel?',
   'Do you believe in rock and roll?',
   'Can music save your mortal soul?',
   'And can you teach me how to dance real slow?'
 ];
 
-
-for (var i = 0; i < 5; i++) {
-  while (true) {
-      var userInput = prompt('Do I ' + questions[i] + '?\n Please enter y or n.').toLowerCase();
-      console.log('user response: ', userInput)
-      if (answers.includes(userInput)) {
-          output.push(userInput);
-          break;
+function quiz(genOutput, turns, quest, sol) {
+  for (var i = 0, l = turns; i < l; i++) {
+    while (true) {
+      var userInput = prompt(quest).tolowerCase());
+      console.log ('user reponse: ', userInput;)
+      if (sol.includes(userInput)) {
+        output.push(userInput);
+        alert('you got it right.');
+        break;
       } else {
-          alert("That is an not a valid response. Try again.");
+        alert(genOutput);
       }
     }
-}
-
-for (var i =0; i < 6; i++) {
-  var languageGuess = prompt('Can you guess what languages I speak?').toLowerCase();
-  if (languages.includes(languageGuess)) {
-    alert('Correct! I You got lucky.');
-    output.push('y')
-    break
-  } else {
-    alert('Nope!')
   }
 }
+
+for (var i = 0; i < 5; i++) {
+  quiz('That is not a valid reponse.', 1, questions[i], answers);
+
+quiz('Nope.', 6, 'What languages do I speak?', languages)
 alert('the correct answers were: ' + languages.join(", "))
 
 var randNum = Math.floor(Math.random() * 20 + 1);
