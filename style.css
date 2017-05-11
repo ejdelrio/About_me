@@ -1,5 +1,5 @@
 body {
-  background-image: url("http://www.planwallpaper.com/static/images/colorful-triangles-background_yB0qTG6.jpg");
+  background-color: black;
 }
 
 #bar {
@@ -7,7 +7,9 @@ body {
   width: 100%;
   background: black;
   position: fixed;
-  top: 0
+  top: 0;
+  display: table-cell;
+  border: 2px solid white;
 }
 
 h1 {
@@ -18,7 +20,6 @@ h1 {
 
 .button {
   color: white;
-  border: 2px solid white;
   height: 30px;
   width: 24%;
   display: inline-block;
@@ -26,9 +27,16 @@ h1 {
   vertical-align: bottom;
 }
 
+body > header > div > div {
+  display: table-cell;
+  vertical-align: bottom;
+}
+
 .button > p {
   font-size: 20px;
   font-family: fantasy;
+  border: 2px solid white;
+  border-radius: 20px;
 }
 
 main {

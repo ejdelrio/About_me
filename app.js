@@ -1,4 +1,20 @@
 'use strict';
+
+function over() {
+  this.style.backgroundColor ='white';
+  this.style.color = 'black';
+}
+
+function out() {
+  this.style.backgroundColor ='black';
+  this.style.color = 'white';
+}
+for (var i = 1; i < 5; i++) {
+  document.getElementById('button' + i).addEventListener('mouseover', over);
+  document.getElementById('button' + i).addEventListener('mouseout', out);
+}
+
+
 // My do while loop is included at the bottom in the stretch section
 var userName = prompt('What\'s your name????');
 var languages = ['english', 'spanish', 'thai'];
