@@ -48,7 +48,7 @@ for (var i = 0; i < 5; i++) {
 for (var i =0; i < 6; i++) {
   var languageGuess = prompt('Can you guess what languages I speak?').toLowerCase();
   if (languages.includes(languageGuess)) {
-    alert('Correct! I You got lucky.');
+    alert('Correct! You got lucky.');
     output.push('y')
     break
   } else {
