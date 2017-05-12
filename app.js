@@ -37,10 +37,10 @@ function quesGen(ques, sol, wrong, right, turns, reqs) {
       var userInput = prompt(ques).toLowerCase();
       console.log ('user reponse: ', userInput);
 
-      if (reqs === undefined && sol.includes(userInput)) {
+      if (sol.includes(userInput)) {
         output.push('correct');
         alert(right);
-        return undefined;
+        return;
       } else if (reqs !== undefined && reqs.includes(userInput) === false) {
         alert('That is not a valid respnse');
       } else {
@@ -58,7 +58,7 @@ for (var i = 0, l = questions.length; i < 5; i++) {
 quesGen("what languages do I speak?", languages, 'Nope, try again', 'Nice job! you got lucky', 6, undefined);
 alert('the correct answers were: ' + languages.join(", "));
 
-var randNum = Math.floor(Math.random() * 20 + 1);
+var randNum = Math.floor(Math.random() * 20 + 1).toString();
 quesGen('Guess a number between 1 and 20', [randNum], "Nope try again!", 'Hell yeah dawg, you got it!', 4, undefined);
 
 var correct = output.length;
