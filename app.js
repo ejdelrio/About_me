@@ -14,78 +14,53 @@ for (var i = 1; i < 5; i++) {
   document.getElementById('button' + i).addEventListener('mouseout', out);
 }
 
-
 // My do while loop is included at the bottom in the stretch section
 var userName = prompt('What\'s your name????');
 var languages = ['english', 'spanish', 'thai'];
-var answers = ['y','yes','n', 'no' ];
 var output = [];
 var questions = [
-  'play an instrument',
-  'speak a foreign language',
-  'like to gorge',
-  'drive a rust bucket',
-  'like scandanavian death metel',
-  'Do you believe in rock and roll?',
-  'Can music save your mortal soul?',
-  'And can you teach me how to dance real slow?'
+  ['Do I play an instrument?', ['yes', 'y']],
+  ['Do I speak a foreign language?', ['yes', 'y']],
+  ['Am I from Seattle?', ['no', 'n']],
+  ['Do I drive a rust bucket?', ['yes', 'y']],
+  ['Do I like country music?', ['no', 'n']]
 ];
 
+function quesGen(ques, sol, wrong, right, turns, reqs) {
+  /*function that takes 6 arguements; a prompt for a question, an array of solutions,
+  an alert for a correct answer, an alert for an incorrect answer,
+  the number of turns, and an array of restricted answers */
+  for (var i = 0, l = turns; i < l; i++) {
 
-for (var i = 0; i < 5; i++) {
-  while (true) {
-      var userInput = prompt('Do I ' + questions[i] + '?\n Please enter y or n.').toLowerCase();
-      console.log('user response: ', userInput)
-      if (answers.includes(userInput)) {
-          output.push(userInput);
-          break;
+    while (true) {
+
+      var userInput = prompt(ques).toLowerCase();
+      console.log ('user reponse: ', userInput);
+
+      if (reqs === undefined && sol.includes(userInput)) {
+        output.push('correct');
+        alert(right);
+        return undefined;
+      } else if (reqs !== undefined && reqs.includes(userInput) === false) {
+        alert('That is not a valid respnse');
       } else {
-          alert("That is an not a valid response. Try again.");
+        alert(wrong);
+        break;
       }
     }
+  }
+};
+
+for (var i = 0, l = questions.length; i < 5; i++) {
+  quesGen(questions[i][0] + ' Answer y or n!', questions[i][1], 'Nope, that ain\'t the right anwser', 'Yup, you got it!', 1, ['y', 'n', 'no', 'yes']);
 }
 
-for (var i =0; i < 6; i++) {
-  var languageGuess = prompt('Can you guess what languages I speak?').toLowerCase();
-  if (languages.includes(languageGuess)) {
-    alert('Correct! I You got lucky.');
-    output.push('y')
-    break
-  } else {
-    alert('Nope!')
-  }
-}
-alert('the correct answers were: ' + languages.join(", "))
+quesGen("what languages do I speak?", languages, 'Nope, try again', 'Nice job! you got lucky', 6, undefined);
+alert('the correct answers were: ' + languages.join(", "));
 
 var randNum = Math.floor(Math.random() * 20 + 1);
-var count = 0
- do {
-  var numGuess = parseInt(prompt("Guess a number between 1 and 20!!!"));
-  console.log('users guess: ', numGuess)
-    if (numGuess === randNum) {
-      alert('Congratulations!!! You guessed correctly');
-      output.push('y')
-      break;
-    } else {
-      alert('Nope. You have ' + (4 - (count + 1)) + ' tries left');
-    }
-    if (count === 3) {
-      alert('You\'re all out of turns. You lose!! :D')
-    }
-    count ++
-} while (count != 4);
+quesGen('Guess a number between 1 and 20', [randNum], "Nope try again!", 'Hell yeah dawg, you got it!', 4, undefined);
 
-var correct = 0;
-for (var i =0, l = output.length; i < l; i++) {
-  if (['y', 'yes'].includes(output[i])) {
-    correct += 1;
-  }
-}
+var correct = output.length;
 
 alert('Congratulations ' + userName + '!!! You got ' + correct + ' question correct');
-
-
-alert('last questions. I promise!!')
-for (var i = 5, l = questions.length; i < l; i++){
-  prompt(questions[i] + '?');
-}
