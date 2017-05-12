@@ -30,6 +30,9 @@ function quesGen(ques, sol, wrong, right, turns, reqs) {
   /*function that takes 6 arguements; a prompt for a question, an array of solutions,
   an alert for a correct answer, an alert for an incorrect answer,
   the number of turns, and an array of restricted answers */
+  if (!reqs) {
+    var reqs = undefined;
+  }
   for (var i = 0, l = turns; i < l; i++) {
 
     while (true) {
@@ -55,12 +58,10 @@ for (var i = 0, l = questions.length; i < 5; i++) {
   quesGen(questions[i][0] + ' Answer y or n!', questions[i][1], 'Nope, that ain\'t the right anwser', 'Yup, you got it!', 1, ['y', 'n', 'no', 'yes']);
 }
 
-quesGen("what languages do I speak?", languages, 'Nope, try again', 'Nice job! you got lucky', 6, undefined);
+quesGen("what languages do I speak?", languages, 'Nope, try again', 'Nice job! you got lucky', 6);
 alert('the correct answers were: ' + languages.join(", "));
 
 var randNum = Math.floor(Math.random() * 20 + 1).toString();
-quesGen('Guess a number between 1 and 20', [randNum], "Nope try again!", 'Hell yeah dawg, you got it!', 4, undefined);
+quesGen('Guess a number between 1 and 20', [randNum], "Nope try again!", 'Hell yeah dawg, you got it!', 4);
 
-var correct = output.length;
-
-alert('Congratulations ' + userName + '!!! You got ' + correct + ' question correct');
+alert('Congratulations ' + userName + '!!! You got ' + output.length + ' question correct');
