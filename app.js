@@ -31,36 +31,36 @@ var questions = [
   'And can you teach me how to dance real slow?'
 ];
 
-
+//
 for (var i = 0; i < 5; i++) {
   while (true) {
-      var userInput = prompt('Do I ' + questions[i] + '?\n Please enter y or n.').toLowerCase();
-      console.log('user response: ', userInput)
-      if (answers.includes(userInput)) {
-          output.push(userInput);
-          break;
-      } else {
-          alert("That is an not a valid response. Try again.");
-      }
+    var userInput = prompt('Do I ' + questions[i] + '?\n Please enter y or n.').toLowerCase();
+    console.log('user response: ', userInput);
+    if (answers.includes(userInput)) {
+      output.push(userInput);
+      break;
+    } else {
+      alert('That is an not a valid response. Try again.');
     }
+  }
 }
 
 for (var i =0; i < 6; i++) {
   var languageGuess = prompt('Can you guess what languages I speak?').toLowerCase();
   if (languages.includes(languageGuess)) {
     alert('Correct! I You got lucky.');
-    output.push('y')
-    break
+    output.push('y');
+    break;
   } else {
-    alert('Nope!')
+    alert('Nope!');
   }
 }
-alert('the correct answers were: ' + languages.join(", "))
+alert('the correct answers were: ' + languages.join(', '));
 
 var randNum = Math.floor(Math.random() * 20 + 1);
-var count = 0
- do {
-  var numGuess = parseInt(prompt("Guess a number between 1 and 20!!!"));
+var count = 0;
+do {
+  var numGuess = parseInt(prompt('Guess a number between 1 and 20!!!'));
   console.log('users guess: ', numGuess)
     if (numGuess === randNum) {
       alert('Congratulations!!! You guessed correctly');
