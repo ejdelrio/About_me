@@ -128,7 +128,7 @@ ul {
 
 .featured_content {
   width: 755px;
-  height: 200px;
+  height: 300px;
   margin-left: 30px;
   margin-top: 30px;
 }
@@ -139,10 +139,9 @@ ul {
 }
 
 footer {
-  position: static;
   width: 755px;
   height: 200px;
-  margin-left: 30px;
+  margin-left: 275px;
   margin-top: 30px;
   outline: 1px solid white;
   color: white;
