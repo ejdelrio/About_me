@@ -69,20 +69,15 @@ main span>:nth-child(3) {
   height: 525px;
   margin-top: 30px;
   margin-left: 30px;
-  background-image: url("truck.JPG");
-  background-size: 100%;
-  background-repeat:no-repeat;
-  outline: 1px solid white;
+}
+
+#slideshow * {
+  color: white;
+  font-family: fantasy;
 }
 
 #slideshow p {
-  outline: none;
-  height: 60px;
-  text-align: center;
-  background-color: rgba(9,9,9, 0.5);
-  top: 0;
-  font-size: 50px;
-  color: white;
+  font-size: 20px;
 }
 
 ul {
@@ -90,7 +85,7 @@ ul {
   padding: 0px;
 }
 
-ul li {
+#master_list > li {
   position: relative;
   height: 230px;
   width: 230px;
@@ -99,14 +94,11 @@ ul li {
   margin-left: 30px;
   display: inline-block;
   margin-top: 30px;
-  background: white;
   list-style: none;
-  outline: 1px solid white;
-
 
 }
 
-ul li p {
+#master_list > li p {
   position: absolute;
   padding: 0;
   margin: 0;
@@ -114,52 +106,36 @@ ul li p {
   height: 30px;
   width: 100%;
   text-align: center;
-  background-color: rgba(9,9,9, 0.5);
-  bottom: 0px;
-  font-size: 20px;
+  top: 0px;
+  font-size: 30px;
   color: white;
 }
 
-ul>:nth-child(1) {
-  background-image: url("http://images6.fanpop.com/image/photos/32100000/-Randy-Rhoads-rock-guitar-legends-32128436-550-558.jpg");
-  background-size: 100%;
+#master_list > li ul, #master_list > li ol {
+  list-style: none;
+  text-align: center;
+  margin: 0;
+  margin-top: 30px;
+  padding: 0;
+  color: white;
 }
 
-ul>:nth-child(2) {
-  background-image: url("http://thebluesmobile.com/wp-content/uploads/2014/07/stevierayvaughanfeatured.jpg");
-  background-size: 140%;
-  background-repeat:no-repeat;
+#master_list > li ul li, #master_list > li ol li {
+  margin-top: 10px;
+  font-size: 20px;
+  font-family: fantasy;
 }
 
-ul>:nth-child(3) {
-  background-image: url("https://s-media-cache-ak0.pinimg.com/236x/c1/57/47/c1574763664e5127edae3492668bdb3c.jpg");
-  background-size: 100%;
-  background-repeat:no-repeat;
-}
-
-.featured_content img {
-  height: 350px;
-  width: 350px;
-  outline: 1px solid white;
-  display: inline-block;
+.featured_content {
+  width: 755px;
+  height: 300px;
   margin-left: 30px;
   margin-top: 30px;
 }
 
-.featured_content div {
-  height: 350px;
-  width: 370px;
-  display: inline-block;
-  position: absolute;
-  margin-left: 40px;
-  margin-top: 30px;
-}
-
-.featured_content div * {
+.featured_content p {
   color: white;
-  margin: 0;
-  padding: 0;
-  font-family: fantasy;
+  font-size: 30px;
 }
 
 footer {
