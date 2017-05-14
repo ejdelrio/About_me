@@ -1,0 +1,63 @@
+a {
+  text-decoration: none;
+}
+
+
+body {
+  background: black
+}
+
+.tall {
+  width: 250px;
+  height: 1500px;
+  background: black;
+  position: fixed;
+  top: 0;
+  left: 0;
+  outline: 2px solid white;
+}
+
+.tall img{
+  height: 250px;
+  width: 250px;
+}
+
+header div {
+  height: 50px;
+}
+
+header div p {
+  color: white;
+  text-align: center;
+  font-size: 20px;
+  outline: 1px solid white;
+  font-family: fantasy;
+}
+
+main {
+  background: black;
+  height: 1500px;
+  width: 1000;
+  margin-left: 245px;
+  margin-top: -20px;
+}
+
+main span * {
+  color: white;
+  font-family: georgia;
+  font-weight: bold;
+  margin-left: 30px;
+}
+
+main span h2 {
+  font-family: fantasy;
+}
+
+.yes_no {
+  height: 196px;
+  width: 796px;
+  margin-left: 30px;
+  margin-top: 30px;
+  border: 2px solid white;
+  border-radius: 20px;
+}
