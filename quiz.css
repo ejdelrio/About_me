@@ -61,3 +61,10 @@ main span h2 {
   border: 2px solid white;
   border-radius: 20px;
 }
+
+.yes_no * {
+  font-size: 20px;
+  color: white;
+  margin-left: 30px;
+  margin-top: 20px;
+}
