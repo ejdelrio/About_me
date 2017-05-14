@@ -37,7 +37,7 @@ header div p {
 main {
   background: black;
   height: 1500px;
-  width: 1000;
+  width: 1500;
   margin-left: 245px;
   margin-top: -20px;
 }
@@ -53,7 +53,7 @@ main span h2 {
   font-family: fantasy;
 }
 
-.yes_no {
+.question {
   height: 196px;
   width: 796px;
   margin-left: 30px;
@@ -67,4 +67,23 @@ main span h2 {
   color: white;
   margin-left: 30px;
   margin-top: 20px;
+}
+
+.multiple h2, .multiple>:nth-child(2){
+  font-size: 20px;
+  color: white;
+  margin-left: 30px;
+  margin-top: 20px;
+}
+
+.multiple>:nth-child(3) {
+  color: black;
+  margin-left: 30px;
+  font-size: 15px;;
+}
+
+.w3-input {
+  width:300px;
+  height: 30px;
+  font-size: 25px;
 }
