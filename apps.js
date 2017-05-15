@@ -13,12 +13,12 @@ function off() {
 }
 
 var navButtons = document.getElementsByClassName('nav_button');
-
+//For loop adds eventlistener with over and off function to nav buttons
 for (var i = 0, l = navButtons.length; i < l; i++) {
   navButtons[i].addEventListener('mouseover', over);
   navButtons[i].addEventListener('mouseout', off);
 }
-
+//Adds event listener with over and off functions to subit button
 document.getElementById('submit').addEventListener('mouseover', over);
 document.getElementById('submit').addEventListener('mouseout', off);
 
