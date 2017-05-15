@@ -34,14 +34,6 @@ var questions = [
   'no'
 ];
 var buttons = ['first_q', 'second_q', 'third_q', 'fourth_q', 'fifth_q'];
-var button_outputs = [];
-for (i = 0; i < 5; i++) {
-  for (l = 0; l < 2; l++) {
-    if (document.getElementsByName(buttons[i])[l].checked) {
-      button_outputs.push(document.getElementsByName(buttons[i])[l]);
-    }
-  }
-}
 
 
 function quesGen(solution, input) {
@@ -49,20 +41,29 @@ function quesGen(solution, input) {
   console.log(solution);
   if (solution === input) {
     correct += 1;
+    console.log(correct);
   }
 }
 
 function submitClick() {
-  for (i = 0, l = button_outputs.length; i < l; i++) {
-    quesGen(questions[i], button_outputs[i].value);
+  for (var i = 0; i < 5; i++) {
+    var numButton = document.getElementsByName(buttons[i]);
+    console.log(numButton);
+    for (var l = 0; l < 2; l++) {
+      if (numButton[l].checked) {
+        quesGen(questions[i], numButton[l].value);
+      }
+    }
   }
-  var multipeChoice = document.getElementsByClassName('w3-input');
-  if (languages.includes((multipeChoice[0].value).toLowerCase)) {
+  if (languages.includes((document.getElementsByClassName('w3-input')[0].value).toLowerCase())) {
     correct += 1;
   }
-  quesGen(randNum, multipeChoice[1].value);
-
-  alert('Out of 7 questions you got ' + correct + ' correct!!');
+  if (document.getElementsByClassName('w3-input')[1].value === randNum.toString()) {
+    correct += 1;
+  }
+  alert('Thanks for the quiz. You got ' + correct + ' questions correct.');
+  correct = 0;
 }
+
 
 document.getElementById('submit').addEventListener('click', submitClick);
