@@ -59,21 +59,27 @@ function submitClick() {
       }
     }
   }
+
+  //Assigns input values to easy to read variables
+  var langValue = document.getElementsByClassName('w3-input')[0].value;
+  var numValue = document.getElementsByClassName('w3-input')[1].value;
+
   //compares language question input to language array to see if includes === true
-  if (languages.includes((document.getElementsByClassName('w3-input')[0].value).toLowerCase())) {
+  if (languages.includes(langValue.toLowerCase())) {
     correct += 1;
   }// Checks number question input to see if input === randonmly generated number
-  if (document.getElementsByClassName('w3-input')[1].value === randNum.toString()) {
+  if (numValue.value === randNum.toString()) {
     correct += 1;
   }
   alert('Thanks for the quiz. You got ' + correct + ' questions correct.');
   //Resets correct value after every click of the submit button
   correct = 0;
   //if statements prevent turn counter from becoming negative numbers
-  if (numGuess != 0) {
+  //Also checks to see if input is empty, if true, turn counter remains contstant
+  if (numGuess != 0 && numValue != '') {
     numGuess -= 1;
   }
-  if (lanGuess != 0){
+  if (lanGuess != 0 && langValue != ''){
     lanGuess -= 1;
   }
   //Changes the innerHTML to display the remaining amount of turns for input questions.
