@@ -66,8 +66,13 @@ function submitClick() {
   alert('Thanks for the quiz. You got ' + correct + ' questions correct.');
 
   correct = 0;
-  numGuess -= 1;
-  lanGuess -= 1;
+
+  if (numGuess != 0) {
+    numGuess -= 1;
+  }
+  if (lanGuess != 0){
+    lanGuess -= 1;
+  }
 
   document.getElementsByClassName('question multiple')[0].childNodes[7].innerHTML = 'You have ' + lanGuess + ' turns left.';
   document.getElementsByClassName('question multiple')[1].childNodes[7].innerHTML = 'You have ' + numGuess + ' turns left.';
