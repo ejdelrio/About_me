@@ -27,7 +27,7 @@ var lanGuess = 4;
 var numGuess = 6;
 var languages = ['english', 'spanish', 'thai'];
 var correct = 0;
-var randNum = Math.floor(Math.random() * 10 + 1).toString();
+var randNum = Math.floor(Math.random() * 20 + 1).toString();
 var questions = [
   'yes',
   'yes',
