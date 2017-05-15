@@ -23,6 +23,8 @@ document.getElementById('submit').addEventListener('mouseover', over);
 document.getElementById('submit').addEventListener('mouseout', off);
 
 // My do while loop is included at the bottom in the stretch section
+var lanGuess = 4;
+var numGuess = 6;
 var languages = ['english', 'spanish', 'thai'];
 var correct = 0;
 var randNum = Math.floor(Math.random() * 10 + 1).toString();
@@ -51,9 +53,10 @@ function submitClick() {
       if (numButton[l].checked) {
         quesGen(questions[i], numButton[l].value);
       }
+      numButton[l].disabled = true;
     }
   }
-  
+
   if (languages.includes((document.getElementsByClassName('w3-input')[0].value).toLowerCase())) {
     correct += 1;
   }
@@ -61,7 +64,20 @@ function submitClick() {
     correct += 1;
   }
   alert('Thanks for the quiz. You got ' + correct + ' questions correct.');
+
   correct = 0;
+  numGuess -= 1;
+  lanGuess -= 1;
+
+  document.getElementsByClassName('question multiple')[0].childNodes[7].innerHTML = 'You have ' + lanGuess + ' turns left.';
+  document.getElementsByClassName('question multiple')[1].childNodes[7].innerHTML = 'You have ' + numGuess + ' turns left.';
+
+  if (numGuess === 0) {
+    document.getElementsByClassName('w3-input')[1].disabled = true;
+  }
+  if (lanGuess === 0) {
+    document.getElementsByClassName('w3-input')[0].disabled = true;
+  }
 }
 
 
