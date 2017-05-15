@@ -1,5 +1,11 @@
 'use strict';
 
+
+function screwDoc(name) {
+  //Way shorter than typing this all the god damn time
+  return document.getElementsByClassName(name);
+}
+
 function over() {
   //Inverts the color of an element when the mouse is over it.
   this.style.background = 'white';
@@ -22,7 +28,6 @@ for (var i = 0, l = navButtons.length; i < l; i++) {
 document.getElementById('submit').addEventListener('mouseover', over);
 document.getElementById('submit').addEventListener('mouseout', off);
 
-// My do while loop is included at the bottom in the stretch section
 var lanGuess = 4; //Turns for language input
 var numGuess = 6; //Turns for number inout
 var languages = ['english', 'spanish', 'thai']; //Solutions for language input
@@ -38,10 +43,15 @@ var questions = [
 var buttons = ['first_q', 'second_q', 'third_q', 'fourth_q', 'fifth_q'];
 
 
-function quesGen(solution, input) {
+function quesGen(solution, input, alertIndex) {
   //Function that compares answer to input and adds one to score if true;
   if (solution === input) {
     correct += 1;
+    screwDoc('alert')[alertIndex].innerHTML = 'Correct!';
+    screwDoc('alert')[alertIndex].style.color = 'green';
+  } else if (solution != input) {
+    screwDoc('alert')[alertIndex].innerHTML = 'Incorrect!';
+    screwDoc('alert')[alertIndex].style.color = 'red';
   }
 }
 
@@ -53,7 +63,7 @@ function submitClick() {
       //Enters checked radio button values into quesGen function with questions array items
       //If a turn is used on the raio buttons, their disabled value becomes true.
       if (numButton[l].checked) {
-        quesGen(questions[i], numButton[l].value);
+        quesGen(questions[i], numButton[l].value, i);
         document.getElementsByName(buttons[i])[0].disabled = true;
         document.getElementsByName(buttons[i])[1].disabled = true;
       }
@@ -61,16 +71,28 @@ function submitClick() {
   }
 
   //Assigns input values to easy to read variables
-  var langValue = document.getElementsByClassName('w3-input')[0].value;
-  var numValue = document.getElementsByClassName('w3-input')[1].value;
+  var langValue = screwDoc('w3-input')[0].value;
+  var numValue = screwDoc('w3-input')[1].value;
 
   //compares language question input to language array to see if includes === true
   if (languages.includes(langValue.toLowerCase())) {
     correct += 1;
-  }// Checks number question input to see if input === randonmly generated number
-  if (numValue.value === randNum.toString()) {
-    correct += 1;
+    screwDoc('alert')[5].style.color = 'green';
+    screwDoc('alert')[5].innerHTML = 'Correct!!';
+  } else if (langValue != ''){
+    screwDoc('alert')[5].style.color = 'red';
+    screwDoc('alert')[5].innerHTML = 'Incorrect!!';
   }
+  // Checks number question input to see if input === randonmly generated number
+  if (numValue === randNum.toString()) {
+    correct += 1;
+    screwDoc('alert')[6].style.color = 'green';
+    screwDoc('alert')[6].innerHTML = 'Correct!!';
+  } else if (numValue != '') {
+    screwDoc('alert')[6].style.color = 'red';
+    screwDoc('alert')[6].innerHTML = 'Incorrect!!';
+  }
+
   alert('Thanks for the quiz. You got ' + correct + ' questions correct.');
   //Resets correct value after every click of the submit button
   correct = 0;
