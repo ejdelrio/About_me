@@ -51,10 +51,12 @@ function submitClick() {
     var numButton = document.getElementsByName(buttons[i]);
     for (var l = 0; l < 2; l++) {
       //Enters checked radio button values into quesGen function with questions array items
+      //If a turn is used on the raio buttons, their disabled value becomes true.
       if (numButton[l].checked) {
         quesGen(questions[i], numButton[l].value);
+        document.getElementsByName(buttons[i])[0].disabled = true;
+        document.getElementsByName(buttons[i])[1].disabled = true;
       }
-      numButton[l].disabled = true;
     }
   }
   //compares language question input to language array to see if includes === true
